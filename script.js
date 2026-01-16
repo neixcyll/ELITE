@@ -39,32 +39,46 @@ const revealObserver = new IntersectionObserver(
 
 revealElements.forEach((el) => revealObserver.observe(el));
 
-const modal = document.getElementById("modal");
-const modalBody = document.getElementById("modalBody");
-const modalClose = document.querySelector(".modal-close");
+const slider = document.querySelector("[data-slider]");
 
-const modalContent = {
-  img1: "Dokumentasi Demo Robot Autonomous",
-  img2: "Workshop Soldering & Elektronik",
-  img3: "Riset Robot Arm Industri",
-};
+if (slider) {
+  const slides = Array.from(slider.querySelectorAll(".slide"));
+  const dots = Array.from(slider.querySelectorAll(".slider-dot"));
+  const prevButton = slider.querySelector(".slider-control.prev");
+  const nextButton = slider.querySelector(".slider-control.next");
+  const sliderTrack = slider.querySelector(".slider-track");
+  let activeIndex = 0;
 
-document.querySelectorAll(".gallery-item").forEach((item) => {
-  item.addEventListener("click", () => {
-    const key = item.dataset.modal;
-    modalBody.textContent = modalContent[key] || "Dokumentasi";
-    modal.classList.add("active");
+  const setActiveSlide = (index) => {
+    activeIndex = (index + slides.length) % slides.length;
+    slides.forEach((slide, idx) => {
+      slide.classList.toggle("is-active", idx === activeIndex);
+    });
+    dots.forEach((dot, idx) => {
+      const isActive = idx === activeIndex;
+      dot.classList.toggle("is-active", isActive);
+      dot.setAttribute("aria-pressed", isActive ? "true" : "false");
+    });
+    if (sliderTrack) {
+      sliderTrack.scrollTo({
+        left: slides[activeIndex].offsetLeft,
+        behavior: "smooth",
+      });
+    }
+  };
+
+prevButton.addEventListener("click", () => {
+    setActiveSlide(activeIndex - 1);
   });
-});
 
-modalClose.addEventListener("click", () => {
-  modal.classList.remove("active");
-});
+  nextButton.addEventListener("click", () => {
+    setActiveSlide(activeIndex + 1);
+  });
 
-modal.addEventListener("click", (event) => {
-  if (event.target === modal) {
-    modal.classList.remove("active");
-  }
-});
-
+  dots.forEach((dot, index) => {
+    dot.addEventListener("click", () => {
+      setActiveSlide(index);
+    });
+  });
+}
 setActiveLink();
