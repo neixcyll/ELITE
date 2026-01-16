@@ -48,6 +48,8 @@ if (slider) {
   const nextButton = slider.querySelector(".slider-control.next");
   const sliderTrack = slider.querySelector(".slider-track");
   let activeIndex = 0;
+  let autoPlayId = null;
+  const autoPlayDelay = 5000;
 
   const setActiveSlide = (index) => {
     activeIndex = (index + slides.length) % slides.length;
@@ -67,18 +69,48 @@ if (slider) {
     }
   };
 
-prevButton.addEventListener("click", () => {
+const stopAutoPlay = () => {
+    if (autoPlayId) {
+      window.clearInterval(autoPlayId);
+      autoPlayId = null;
+    }
+  };
+
+  const startAutoPlay = () => {
+    stopAutoPlay();
+    autoPlayId = window.setInterval(() => {
+      setActiveSlide(activeIndex + 1);
+    }, autoPlayDelay);
+  };
+
+  prevButton.addEventListener("click", () => {
     setActiveSlide(activeIndex - 1);
+    startAutoPlay();
   });
 
   nextButton.addEventListener("click", () => {
     setActiveSlide(activeIndex + 1);
+    startAutoPlay();
   });
 
   dots.forEach((dot, index) => {
     dot.addEventListener("click", () => {
       setActiveSlide(index);
+      startAutoPlay();
     });
   });
+  slider.addEventListener("mouseenter", stopAutoPlay);
+  slider.addEventListener("mouseleave", startAutoPlay);
+  slider.addEventListener("focusin", stopAutoPlay);
+  slider.addEventListener("focusout", startAutoPlay);
+  document.addEventListener("visibilitychange", () => {
+    if (document.hidden) {
+      stopAutoPlay();
+    } else {
+      startAutoPlay();
+    }
+  });
+
+  startAutoPlay();
 }
 setActiveLink();
