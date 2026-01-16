@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Robotic Elite Organization</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="navbar">
+    <div class="container nav-content">
+      <div class="brand">
+        <span class="brand-icon">⚙️</span>
+        <span>Robotic Elite</span>
+      </div>
+      <nav class="nav-links">
+        <a href="#hero" class="nav-link active">Beranda</a>
+        <a href="#profile" class="nav-link">Profil</a>
+        <a href="#sejarah" class="nav-link">Sejarah</a>
+        <a href="#struktur" class="nav-link">Struktur</a>
+        <a href="#dokumentasi" class="nav-link">Dokumentasi</a>
+        <a href="#prestasi" class="nav-link">Prestasi</a>
+        <a href="#kontak" class="nav-link">Kontak</a>
+      </nav>
+      <button class="nav-toggle" aria-label="Buka menu">☰</button>
+      <a href="#kontak" class="btn primary">Gabung / Daftar Anggota</a>
+    </div>
+  </header>
+
+  <main>
+    <section id="hero" class="section hero">
+      <div class="container hero-grid">
+        <div class="hero-text reveal">
+          <p class="eyebrow">Organisasi Robotik Modern</p>
+          <h1>Robotic Elite: Menghubungkan Ide, Teknologi, dan Aksi.</h1>
+          <p class="lead">
+            Komunitas riset dan inovasi robotika yang fokus pada pengembangan
+            karya, kolaborasi kompetisi, serta edukasi teknologi bagi anggota.
+          </p>
+          <div class="hero-actions">
+            <a href="#kontak" class="btn primary">Gabung / Daftar Anggota</a>
+            <a href="#dokumentasi" class="btn ghost">Lihat Dokumentasi</a>
+          </div>
+          <div class="hero-stats">
+            <div>
+              <h3>120+</h3>
+              <p>Anggota Aktif</p>
+            </div>
+            <div>
+              <h3>35</h3>
+              <p>Project & Robot</p>
+            </div>
+            <div>
+              <h3>18</h3>
+              <p>Prestasi Nasional</p>
+            </div>
+          </div>
+        </div>
+        <div class="hero-visual reveal">
+          <div class="robot-card">
+            <svg viewBox="0 0 240 260" aria-hidden="true">
+              <defs>
+                <linearGradient id="robotGlow" x1="0" x2="1">
+                  <stop offset="0%" stop-color="#FF7A00" stop-opacity="0.8" />
+                  <stop offset="100%" stop-color="#FFD2A6" stop-opacity="0.4" />
+                </linearGradient>
+              </defs>
+              <rect x="40" y="30" width="160" height="140" rx="20" fill="#ffffff" stroke="#FF7A00" stroke-width="4" />
+              <circle cx="90" cy="90" r="16" fill="#FF7A00" />
+              <circle cx="150" cy="90" r="16" fill="#FF7A00" />
+              <rect x="80" y="125" width="80" height="18" rx="9" fill="#E6E6E6" />
+              <rect x="60" y="180" width="120" height="50" rx="18" fill="#FFFFFF" stroke="#FF7A00" stroke-width="4" />
+              <rect x="30" y="190" width="20" height="35" rx="8" fill="#FF7A00" />
+              <rect x="190" y="190" width="20" height="35" rx="8" fill="#FF7A00" />
+              <circle cx="120" cy="18" r="8" fill="#FF7A00" />
+              <line x1="120" y1="18" x2="120" y2="30" stroke="#FF7A00" stroke-width="4" />
+              <path d="M18 80 H40" stroke="url(#robotGlow)" stroke-width="6" />
+              <path d="M200 80 H222" stroke="url(#robotGlow)" stroke-width="6" />
+            </svg>
+            <div class="robot-badge">AI Unit 07</div>
+          </div>
+          <div class="circuit-lines"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="profile" class="section">
+      <div class="container">
+        <div class="section-title reveal">
+          <h2>Profil Organisasi</h2>
+          <p>Visi, misi, dan deskripsi singkat Robotic Elite.</p>
+        </div>
+        <div class="grid-2">
+          <div class="card reveal">
+            <h3>Visi</h3>
+            <p>
+              Menjadi pusat inovasi robotika yang berdaya saing global dengan
+              kolaborasi riset, pembelajaran, dan pengabdian teknologi.
+            </p>
+          </div>
+          <div class="card reveal">
+            <h3>Misi</h3>
+            <ul>
+              <li>Mendorong riset robotika berkelanjutan dan aplikatif.</li>
+              <li>Membina anggota melalui program mentoring dan proyek tim.</li>
+              <li>Membangun jejaring kompetisi, industri, dan edukasi publik.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="card wide reveal">
+          <h3>Deskripsi Singkat</h3>
+          <p>
+            Robotic Elite adalah organisasi teknologi yang menaungi aktivitas
+            riset, pengembangan robot, serta edukasi untuk menyiapkan generasi
+            inovator. Dengan kombinasi tim mekanik, elektronik, dan programming,
+            setiap proyek dirancang untuk memberikan dampak nyata.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="sejarah" class="section alt">
+      <div class="container">
+        <div class="section-title reveal">
+          <h2>Sejarah</h2>
+          <p>Timeline perjalanan Robotic Elite dari awal berdiri hingga kini.</p>
+        </div>
+        <div class="timeline">
+          <div class="timeline-item reveal">
+            <span class="timeline-year">2016</span>
+            <div class="timeline-card">
+              <h3>Inisiasi Komunitas</h3>
+              <p>Kelompok kecil pecinta robotik memulai workshop mingguan.</p>
+            </div>
+          </div>
+          <div class="timeline-item reveal">
+            <span class="timeline-year">2018</span>
+            <div class="timeline-card">
+              <h3>Proyek Robot Pertama</h3>
+              <p>Menciptakan robot line follower untuk kompetisi regional.</p>
+            </div>
+          </div>
+          <div class="timeline-item reveal">
+            <span class="timeline-year">2021</span>
+            <div class="timeline-card">
+              <h3>Ekspansi Divisi</h3>
+              <p>Menambah divisi riset AI dan tim dokumentasi kreatif.</p>
+            </div>
+          </div>
+          <div class="timeline-item reveal">
+            <span class="timeline-year">2024</span>
+            <div class="timeline-card">
+              <h3>Kolaborasi Nasional</h3>
+              <p>Mitra strategis dengan universitas dan industri teknologi.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="struktur" class="section">
+      <div class="container">
+        <div class="section-title reveal">
+          <h2>Struktur Organisasi</h2>
+          <p>Susunan pengurus dan divisi Robotic Elite.</p>
+        </div>
+        <div class="structure-grid">
+          <div class="structure-card reveal">
+            <h3>Pengurus Inti</h3>
+            <ul>
+              <li>Pembina: Prof. Nadira W.</li>
+              <li>Ketua: Arka Pratama</li>
+              <li>Wakil Ketua: Sinta Maharani</li>
+              <li>Sekretaris: Fajar K.</li>
+              <li>Bendahara: Livia A.</li>
+            </ul>
+          </div>
+          <div class="structure-card reveal">
+            <h3>Divisi</h3>
+            <div class="badge-group">
+              <span class="badge">Mekanik</span>
+              <span class="badge">Elektronik</span>
+              <span class="badge">Programming</span>
+              <span class="badge">Humas</span>
+              <span class="badge">Dokumentasi</span>
+            </div>
+            <p>
+              Setiap divisi memiliki koordinator dan program kerja khusus untuk
+              mendukung riset serta publikasi.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="dokumentasi" class="section alt">
+      <div class="container">
+        <div class="section-title reveal">
+          <h2>Dokumentasi & Keterangan</h2>
+          <p>Galeri kegiatan terbaru dan ringkasan acara unggulan.</p>
+        </div>
+        <div class="gallery">
+          <div class="gallery-item reveal" data-modal="img1">
+            <div class="placeholder">Demo Robot Autonomous</div>
+          </div>
+          <div class="gallery-item reveal" data-modal="img2">
+            <div class="placeholder">Workshop Soldering</div>
+          </div>
+          <div class="gallery-item reveal" data-modal="img3">
+            <div class="placeholder">Riset Robot Arm</div>
+          </div>
+        </div>
+        <div class="activity-cards">
+          <div class="card reveal">
+            <div class="card-header">
+              <span class="badge">12 Juni 2024</span>
+              <span class="badge light">Lab Robotik</span>
+            </div>
+            <h3>Pelatihan Sensor & IoT</h3>
+            <p>Pelatihan intensif integrasi sensor dengan dashboard monitoring.</p>
+          </div>
+          <div class="card reveal">
+            <div class="card-header">
+              <span class="badge">25 Juli 2024</span>
+              <span class="badge light">Auditorium</span>
+            </div>
+            <h3>Talkshow Robotika Industri</h3>
+            <p>Diskusi bersama praktisi industri tentang robot cerdas.</p>
+          </div>
+          <div class="card reveal">
+            <div class="card-header">
+              <span class="badge">15 Agustus 2024</span>
+              <span class="badge light">Kompetisi Nasional</span>
+            </div>
+            <h3>Simulasi Robot Rescue</h3>
+            <p>Uji coba strategi robot rescue menghadapi medan bencana.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="prestasi" class="section">
+      <div class="container">
+        <div class="section-title reveal">
+          <h2>Prestasi Elite</h2>
+          <p>Daftar prestasi paling bergengsi yang berhasil diraih.</p>
+        </div>
+        <div class="filter-bar reveal">
+          <select id="yearFilter">
+            <option value="all">Semua Tahun</option>
+            <option value="2024">2024</option>
+            <option value="2023">2023</option>
+            <option value="2022">2022</option>
+          </select>
+          <select id="levelFilter">
+            <option value="all">Semua Tingkat</option>
+            <option value="Nasional">Nasional</option>
+            <option value="Internasional">Internasional</option>
+          </select>
+        </div>
+        <div class="achievement-list">
+          <div class="achievement-card reveal" data-year="2024" data-level="Internasional">
+            <div>
+              <h3>Gold Medal RoboTech Expo</h3>
+              <p>Robot Humanoid Asisten Klinik</p>
+            </div>
+            <div class="achievement-meta">
+              <span class="badge">2024</span>
+              <span class="badge medal">Internasional</span>
+            </div>
+          </div>
+          <div class="achievement-card reveal" data-year="2023" data-level="Nasional">
+            <div>
+              <h3>Juara 1 Kontes Robot Indonesia</h3>
+              <p>Robot Rescue Autonomous</p>
+            </div>
+            <div class="achievement-meta">
+              <span class="badge">2023</span>
+              <span class="badge medal">Nasional</span>
+            </div>
+          </div>
+          <div class="achievement-card reveal" data-year="2022" data-level="Nasional">
+            <div>
+              <h3>Best Innovation Award</h3>
+              <p>Robot Pemilah Sampah Cerdas</p>
+            </div>
+            <div class="achievement-meta">
+              <span class="badge">2022</span>
+              <span class="badge medal">Nasional</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="kontak" class="section alt">
+      <div class="container">
+        <div class="section-title reveal">
+          <h2>Kontak</h2>
+          <p>Hubungi Robotic Elite untuk kolaborasi atau pendaftaran.</p>
+        </div>
+        <div class="contact-grid">
+          <div class="card reveal">
+            <h3>Alamat</h3>
+            <p>Gedung Inovasi Teknologi, Lantai 3, Kota Teknologi.</p>
+          </div>
+          <div class="card reveal">
+            <h3>Email</h3>
+            <p>halo@roboticelite.id</p>
+          </div>
+          <div class="card reveal">
+            <h3>Sosial Media</h3>
+            <p>@roboticelite.id</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-content">
+      <div>
+        <h3>Robotic Elite</h3>
+        <p>Inovasi robotik untuk masa depan yang lebih cerdas.</p>
+      </div>
+      <div>
+        <p>© 2024 Robotic Elite. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="modal" id="modal">
+    <div class="modal-content">
+      <button class="modal-close" aria-label="Tutup">✕</button>
+      <div class="modal-body" id="modalBody">Konten</div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
