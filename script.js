@@ -67,23 +67,4 @@ modal.addEventListener("click", (event) => {
   }
 });
 
-const yearFilter = document.getElementById("yearFilter");
-const levelFilter = document.getElementById("levelFilter");
-const achievements = document.querySelectorAll(".achievement-card");
-
-const filterAchievements = () => {
-  const yearValue = yearFilter.value;
-  const levelValue = levelFilter.value;
-
-  achievements.forEach((card) => {
-    const yearMatch = yearValue === "all" || card.dataset.year === yearValue;
-    const levelMatch = levelValue === "all" || card.dataset.level === levelValue;
-    card.style.display = yearMatch && levelMatch ? "flex" : "none";
-  });
-};
-
-yearFilter.addEventListener("change", filterAchievements);
-levelFilter.addEventListener("change", filterAchievements);
-
 setActiveLink();
-filterAchievements();
