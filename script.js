@@ -114,3 +114,28 @@ const stopAutoPlay = () => {
   startAutoPlay();
 }
 setActiveLink();
+document.querySelectorAll(".structure-card").forEach(card => {
+  card.classList.remove("active");
+
+  const icon = card.querySelector(".accordion-icon");
+  if (icon) icon.textContent = "˅";
+});
+
+document.querySelectorAll(".accordion-header").forEach(header => {
+  header.addEventListener("click", () => {
+    const card = header.closest(".structure-card");
+    const icon = header.querySelector(".accordion-icon");
+
+    const isOpen = card.classList.contains("active");
+    
+    card.classList.remove("active");
+    icon.textContent = "˅";
+
+    if (!isOpen) {
+      card.classList.add("active");
+      icon.textContent = "˄";
+    }
+  });
+});
+
+

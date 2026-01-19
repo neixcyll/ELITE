@@ -179,7 +179,7 @@ body::before {
   box-shadow: var(--shadow);
 }
 
-/* ===== HERO SECTION DENGAN VIDEO BACKGROUND ===== */
+
 .hero {
   padding-top: 120px;
   position: relative;
@@ -187,7 +187,7 @@ body::before {
   min-height: 100vh;
 }
 
-/* Video Background Container */
+
 .video-background {
   position: absolute;
   top: 0;
@@ -208,7 +208,7 @@ body::before {
   object-fit: cover;
 }
 
-/* Overlay gelap agar text terbaca */
+
 .video-overlay {
   position: absolute;
   top: 0;
@@ -219,7 +219,7 @@ body::before {
   z-index: 1;
 }
 
-/* Pastikan konten hero di atas video */
+
 .hero .container {
   position: relative;
   z-index: 2;
@@ -294,10 +294,10 @@ body::before {
   backdrop-filter: blur(10px);
   border: 3px solid rgba(255, 122, 0, 0.6);
   box-shadow: 
-    inset 0 0 30px rgba(255, 122, 0, 0.15),  /* Cahaya dari dalam */
-    0 0 30px rgba(255, 122, 0, 0.5),         /* Glow pertama */
-    0 0 60px rgba(255, 122, 0, 0.3),         /* Glow kedua */
-    0 8px 32px rgba(0, 0, 0, 0.1);           /* Shadow bawah */
+    inset 0 0 30px rgba(255, 122, 0, 0.15),  
+    0 0 30px rgba(255, 122, 0, 0.5),        
+    0 0 60px rgba(255, 122, 0, 0.3),         
+    0 8px 32px rgba(0, 0, 0, 0.1);          
 }
 
 .robot-card::before {
@@ -403,10 +403,70 @@ body::before {
 
 .structure-card {
   background: var(--white);
-  padding: 24px;
-  border-radius: 20px;
+  padding: 28px;
+  border-radius: 22px;
   box-shadow: var(--shadow);
+  transition: all 0.35s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
 }
+
+.structure-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 48px rgba(255, 122, 0, 0.18);
+}
+
+.structure-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 6px;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    var(--orange),
+    transparent
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.structure-card:hover::before {
+  opacity: 1;
+}
+
+.accordion-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background-color: var(--orange);
+  color: var(--white);
+
+  padding: 18px 24px;
+  border-radius: 18px;
+
+  cursor: pointer;
+}
+
+.accordion-header h3 {
+  margin: 0;
+  color: var(--white);
+}
+
+.accordion-icon {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--white);
+  transition: transform 0.3s ease;
+}
+
+.structure-card.active .accordion-icon {
+  transform: rotate(180deg);
+}
+
 
 .badge-group {
   display: flex;
@@ -682,7 +742,7 @@ body::before {
   transform: translateY(0);
 }
 
-/* ===== RESPONSIVE DESIGN ===== */
+
 @media (max-width: 960px) {
   .hero-grid,
   .grid-2,
@@ -724,7 +784,7 @@ body::before {
     font-size: 2.4rem;
   }
   
-  /* Matikan video di mobile, ganti dengan gambar */
+  
   .video-background video {
     display: none;
   }
@@ -774,3 +834,120 @@ body::before {
   width: 24px;
   height: 24px;
 }
+
+.division-highlight {
+  position: relative;
+  display: inline-block;
+  font-weight: 700;
+  color: var(--dark);
+  margin-bottom: 10px;
+  padding: 2px 6px;
+  z-index: 1;
+}
+
+.division-highlight::before {
+  content: "";
+  position: absolute;
+  left: -6px;
+  bottom: 0;
+  width: calc(100% + 12px);
+  height: 60%;
+  background: rgba(255, 122, 0, 0.35);
+  z-index: -1;
+  border-radius: 6px;
+}
+
+.structure-card ul,
+.structure-card ol {
+  margin-top: 8px;
+  padding-left: 20px;
+}
+
+.structure-card li {
+  margin-bottom: 6px;
+  line-height: 1.7;
+}
+
+.jabatan {
+  color: var(--orange);
+  font-weight: 700;
+}
+
+.pengurus-list {
+  list-style: none;       
+  padding-left: 0;         
+}
+
+.pengurus-list > li {
+  margin-bottom: 12px;
+}
+
+.pengurus-list ul {
+  margin-top: 6px;
+  padding-left: 20px;
+  list-style-type: disc;  
+}
+
+.pengurus-list ul li {
+  color: var(--dark);
+  margin-bottom: 6px;
+}
+
+.card-stage {
+  position: relative;
+  height: 420px;
+  margin-top: 60px;
+}
+ */
+.info-card {
+  position: absolute;
+  width: 260px;
+  height: 160px;
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.15);
+  padding: 20px;
+  cursor: pointer;
+  transition: transform 0.4s ease;
+}
+
+.info-card h3 {
+  margin-bottom: 8px;
+}
+
+.card-left {
+  left: 50%;
+  top: 120px;
+  transform: translateX(-170px) rotate(-12deg);
+  z-index: 3;
+}
+
+.card-right {
+  left: 50%;
+  top: 120px;
+  transform: translateX(-10px) rotate(10deg);
+  z-index: 2;
+}
+
+.hand {
+  position: absolute;
+  width: 180px;
+  pointer-events: none;
+}
+
+.hand-left {
+  left: 50%;
+  top: 220px;
+  transform: translateX(-300px) rotate(-8deg);
+  z-index: 4;
+}
+
+.hand-right {
+  left: 50%;
+  top: 230px;
+  transform: translateX(120px) rotate(8deg);
+  z-index: 4;
+}
+
+
+
