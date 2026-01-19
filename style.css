@@ -205,7 +205,7 @@ body::before {
   width: 100%;
   height: auto;
   max-height: 100%;
-  object-fit: contain;
+  object-fit: cover;
 }
 
 /* Overlay gelap agar text terbaca */
@@ -288,11 +288,29 @@ body::before {
   background: rgba(255, 255, 255, 0.95);
   border-radius: 24px;
   padding: 24px;
-  box-shadow: var(--shadow);
   position: relative;
   text-align: center;
   width: min(320px, 90%);
   backdrop-filter: blur(10px);
+  border: 3px solid rgba(255, 122, 0, 0.6);
+  box-shadow: 
+    inset 0 0 30px rgba(255, 122, 0, 0.15),  /* Cahaya dari dalam */
+    0 0 30px rgba(255, 122, 0, 0.5),         /* Glow pertama */
+    0 0 60px rgba(255, 122, 0, 0.3),         /* Glow kedua */
+    0 8px 32px rgba(0, 0, 0, 0.1);           /* Shadow bawah */
+}
+
+.robot-card::before {
+  content: '';
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  right: -20px;
+  bottom: -20px;
+  background: rgba(255, 122, 0, 0.6);
+  border-radius: 32px;
+  z-index: -1;
+  filter: blur(40px);
 }
 
 .robot-card svg {
@@ -319,6 +337,7 @@ body::before {
   border: 2px dashed rgba(255, 122, 0, 0.2);
   border-radius: 28px;
   z-index: -1;
+  display: none;
 }
 
 .grid-2 {
