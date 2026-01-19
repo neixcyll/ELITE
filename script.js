@@ -49,7 +49,7 @@ if (slider) {
   const sliderTrack = slider.querySelector(".slider-track");
   let activeIndex = 0;
   let autoPlayId = null;
-  const autoPlayDelay = 5000;
+  const autoPlayDelay = 3000;
 
   const setActiveSlide = (index) => {
     activeIndex = (index + slides.length) % slides.length;

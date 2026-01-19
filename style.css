@@ -99,6 +99,18 @@ body::before {
   font-size: 0.9rem;
 }
 
+.logo {
+  height: 30px;
+  width: auto;
+  margin-right: 12px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+
 .nav-links {
   display: flex;
   gap: 18px;
@@ -160,12 +172,57 @@ body::before {
 }
 
 .btn:hover {
+  background-color: var(--gray);
+  border-color: var(--gray);
+  color: var(--white);
   transform: translateY(-2px);
   box-shadow: var(--shadow);
 }
 
+/* ===== HERO SECTION DENGAN VIDEO BACKGROUND ===== */
 .hero {
   padding-top: 120px;
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+}
+
+/* Video Background Container */
+.video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.video-background video {
+  width: 100%;
+  height: auto;
+  max-height: 100%;
+  object-fit: cover;
+}
+
+/* Overlay gelap agar text terbaca */
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+/* Pastikan konten hero di atas video */
+.hero .container {
+  position: relative;
+  z-index: 2;
 }
 
 .hero-grid {
@@ -186,12 +243,15 @@ body::before {
 .hero-text h1 {
   font-size: 3rem;
   margin-bottom: 16px;
+  color: var(--white);
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
 }
 
 .lead {
   font-size: 1.1rem;
-  color: var(--gray);
+  color: var(--white);
   margin-bottom: 24px;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
 }
 
 .hero-actions {
@@ -204,15 +264,18 @@ body::before {
 .hero-stats {
   display: flex;
   gap: 24px;
+  text-align: center;
 }
 
 .hero-stats h3 {
   font-size: 1.5rem;
   color: var(--orange);
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
 }
 
 .hero-stats p {
-  color: var(--gray);
+  color: var(--white);
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
 }
 
 .hero-visual {
@@ -222,17 +285,41 @@ body::before {
 }
 
 .robot-card {
-  background: var(--white);
+  background: rgba(255, 255, 255, 0.95);
   border-radius: 24px;
   padding: 24px;
-  box-shadow: var(--shadow);
   position: relative;
   text-align: center;
   width: min(320px, 90%);
+  backdrop-filter: blur(10px);
+  border: 3px solid rgba(255, 122, 0, 0.6);
+  box-shadow: 
+    inset 0 0 30px rgba(255, 122, 0, 0.15),  /* Cahaya dari dalam */
+    0 0 30px rgba(255, 122, 0, 0.5),         /* Glow pertama */
+    0 0 60px rgba(255, 122, 0, 0.3),         /* Glow kedua */
+    0 8px 32px rgba(0, 0, 0, 0.1);           /* Shadow bawah */
+}
+
+.robot-card::before {
+  content: '';
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  right: -20px;
+  bottom: -20px;
+  background: rgba(255, 122, 0, 0.6);
+  border-radius: 32px;
+  z-index: -1;
+  filter: blur(40px);
 }
 
 .robot-card svg {
   width: 100%;
+}
+
+.robot-card img {
+  width: 100%;
+  border-radius: 12px;
 }
 
 .robot-badge {
@@ -250,6 +337,7 @@ body::before {
   border: 2px dashed rgba(255, 122, 0, 0.2);
   border-radius: 28px;
   z-index: -1;
+  display: none;
 }
 
 .grid-2 {
@@ -283,12 +371,7 @@ body::before {
   display: grid;
   grid-template-columns: 80px 1fr;
   align-items: start;
-  gap: 24px;
-}
-
-.timeline-year {
-  font-weight: 700;
-  color: var(--orange);
+  gap: 54px;
 }
 
 .timeline-card {
@@ -296,6 +379,20 @@ body::before {
   padding: 20px;
   border-radius: 16px;
   box-shadow: var(--shadow);
+  padding-top: 12px;
+}
+
+.timeline-year {
+  font-weight: 700;
+  color: var(--white);
+  background: linear-gradient(135deg, var(--orange), #ff9933);
+  padding: 16px 24px;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(255, 122, 0, 0.3);
+  display: inline-block;
+  text-align: center;
+  border: 2px solid rgba(255, 122, 0, 0.2);
+  min-width: 120px;
 }
 
 .structure-grid {
@@ -470,6 +567,18 @@ body::before {
   color: rgba(255, 255, 255, 0.85);
   font-weight: 600;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  position: relative;
+  overflow: hidden;
+}
+
+.project-thumb img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
 }
 
 .project-thumb span {
@@ -573,6 +682,7 @@ body::before {
   transform: translateY(0);
 }
 
+/* ===== RESPONSIVE DESIGN ===== */
 @media (max-width: 960px) {
   .hero-grid,
   .grid-2,
@@ -613,10 +723,54 @@ body::before {
   .hero-text h1 {
     font-size: 2.4rem;
   }
+  
+  /* Matikan video di mobile, ganti dengan gambar */
+  .video-background video {
+    display: none;
+  }
+  
+  .video-background {
+    background: url('Galeri/fallback-image.jpg') center/cover no-repeat;
+  }
 }
 
 @media (max-width: 600px) {
   .hero-stats {
     flex-direction: column;
   }
+}
+
+/* Achievement Badge dengan Medal SVG */
+.achievement-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.achievement-badge.gold {
+  background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+  color: #6B4500;
+  border: 2px solid #FFE55C;
+}
+
+.achievement-badge.silver {
+  background: linear-gradient(135deg, #E8E8E8 0%, #B8B8B8 100%);
+  color: #4A4A4A;
+  border: 2px solid #F5F5F5;
+}
+
+.achievement-badge.bronze {
+  background: linear-gradient(135deg, #CD7F32 0%, #8B4513 100%);
+  color: #FFF;
+  border: 2px solid #E5A868;
+}
+
+.medal-icon {
+  width: 24px;
+  height: 24px;
 }
