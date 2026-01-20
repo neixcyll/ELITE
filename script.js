@@ -114,28 +114,98 @@ const stopAutoPlay = () => {
   startAutoPlay();
 }
 setActiveLink();
-document.querySelectorAll(".structure-card").forEach(card => {
-  card.classList.remove("active");
 
-  const icon = card.querySelector(".accordion-icon");
-  if (icon) icon.textContent = "˅";
-});
+// ===== CARD SHUFFLE & CLICK =====
+const cards = document.querySelectorAll(".info-card");
+const detailContainer = document.getElementById("detailContainer");
+const detailContent = document.getElementById("detailContent");
+const btnBack = document.getElementById("btnBack");
+const cardStage = document.querySelector(".card-stage");
 
-document.querySelectorAll(".accordion-header").forEach(header => {
-  header.addEventListener("click", () => {
-    const card = header.closest(".structure-card");
-    const icon = header.querySelector(".accordion-icon");
+let isSwapped = false;
+let swapInterval;
 
-    const isOpen = card.classList.contains("active");
-    
-    card.classList.remove("active");
-    icon.textContent = "˅";
+// Data Pengurus & Divisi
+const cardData = {
+  pengurus: {
+    title: "Pengurus Inti",
+    content: `
+      <h2>Pengurus Inti ELITE</h2>
+      <ul>
+        <li><span class="jabatan">Ketua:</span> Nama Ketua</li>
+        <li><span class="jabatan">Wakil Ketua:</span> Nama Wakil</li>
+        <li><span class="jabatan">Sekretaris:</span> Nama Sekretaris</li>
+        <li><span class="jabatan">Bendahara:</span> Nama Bendahara</li>
+        <li><span class="jabatan">Koordinator Divisi:</span> Nama Koordinator</li>
+      </ul>
+    `
+  },
+  divisi: {
+    title: "Divisi Riset",
+    content: `
+      <h2>Divisi Riset ELITE</h2>
+      <ul>
+        <li><span class="jabatan">Divisi Soccer Robot:</span> Fokus pada pengembangan robot sepak bola</li>
+        <li><span class="jabatan">Divisi Line Follower:</span> Riset robot line tracking</li>
+        <li><span class="jabatan">Divisi Fire Fighting:</span> Robot pemadam kebakaran</li>
+        <li><span class="jabatan">Divisi Programming:</span> Pengembangan software dan AI</li>
+        <li><span class="jabatan">Divisi Elektronika:</span> Desain PCB dan hardware</li>
+      </ul>
+    `
+  }
+};
 
-    if (!isOpen) {
-      card.classList.add("active");
-      icon.textContent = "˄";
-    }
+// Fungsi Swap Otomatis
+function startSwap() {
+  swapInterval = setInterval(() => {
+    isSwapped = !isSwapped;
+    cards.forEach(card => {
+      card.classList.toggle("swap", isSwapped);
+    });
+  }, 3000);
+}
+
+// Fungsi Stop Swap
+function stopSwap() {
+  clearInterval(swapInterval);
+}
+
+// Fungsi Tampilkan Detail
+function showDetail(type) {
+  stopSwap();
+  
+  // Animasi kartu hilang
+  cards.forEach(card => card.classList.add("clicked"));
+  
+  setTimeout(() => {
+    cardStage.style.display = "none";
+    detailContent.innerHTML = cardData[type].content;
+    detailContainer.classList.add("show");
+  }, 600);
+}
+
+// Fungsi Kembali
+function hideDetail() {
+  detailContainer.classList.remove("show");
+  
+  setTimeout(() => {
+    cardStage.style.display = "flex";
+    cards.forEach(card => card.classList.remove("clicked"));
+    startSwap();
+  }, 500);
+}
+
+// Event Listeners
+cards.forEach(card => {
+  card.addEventListener("click", () => {
+    const cardType = card.getAttribute("data-card");
+    showDetail(cardType);
   });
 });
+
+btnBack.addEventListener("click", hideDetail);
+
+// Start swap saat load
+startSwap();
 
 
