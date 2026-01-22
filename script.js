@@ -323,3 +323,106 @@ btnBack.addEventListener("click", hideDetail);
 
 // Start swap saat load
 startSwap();
+
+// ===== AUTO SCROLL GLOBAL (SATU SUMBER) =====
+let autoScroll = null;
+let resumeTimeout = null;
+let isModalOpen = false;
+
+function stopAutoScroll() {
+  if (autoScroll) {
+    clearInterval(autoScroll);
+    autoScroll = null;
+  }
+}
+
+function resumeAutoScroll() {
+  clearTimeout(resumeTimeout);
+  resumeTimeout = setTimeout(startAutoScroll, 4000);
+}
+
+// ===== AUTO SCROLL CAROUSEL PRESTASI =====
+const scrollTrack = document.getElementById('scrollTrack');
+const scrollLeft = document.getElementById('scrollLeft');
+const scrollRight = document.getElementById('scrollRight');
+
+const scrollAmount = 360;
+const scrollDelay = 3000;
+
+function startAutoScroll() {
+  if (!scrollTrack) return;
+  if (isModalOpen) return; // ⛔ JANGAN JALAN KALAU MODAL BUKA
+
+  stopAutoScroll();
+  autoScroll = setInterval(() => {
+    scrollTrack.scrollBy({
+      left: scrollAmount,
+      behavior: 'smooth'
+    });
+
+    if (
+      scrollTrack.scrollLeft + scrollTrack.clientWidth >=
+      scrollTrack.scrollWidth - 5
+    ) {
+      scrollTrack.scrollTo({ left: 0, behavior: 'smooth' });
+    }
+  }, scrollDelay);
+}
+
+if (scrollTrack && scrollLeft && scrollRight) {
+
+  startAutoScroll();
+
+  scrollLeft.addEventListener('click', () => {
+    stopAutoScroll();
+    scrollTrack.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+    resumeAutoScroll();
+  });
+
+  scrollRight.addEventListener('click', () => {
+    stopAutoScroll();
+    scrollTrack.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    resumeAutoScroll();
+  });
+
+  scrollTrack.addEventListener('mouseenter', stopAutoScroll);
+  scrollTrack.addEventListener('mouseleave', startAutoScroll);
+  scrollTrack.addEventListener('wheel', stopAutoScroll, { passive: true });
+  scrollTrack.addEventListener('touchstart', stopAutoScroll, { passive: true });
+}
+
+// ===== PRESTASI MODAL =====
+const prestasiCards = document.querySelectorAll(".prestasi-card");
+const prestasiModal = document.getElementById("prestasiModal");
+const prestasiImage = document.getElementById("prestasiImage");
+const prestasiTitle = document.getElementById("prestasiTitle");
+const prestasiDesc = document.getElementById("prestasiDesc");
+const prestasiClose = document.getElementById("prestasiClose");
+
+prestasiCards.forEach(card => {
+  card.addEventListener("click", () => {
+
+    // 🔒 KUNCI SCROLL & AUTO SCROLL
+    document.body.classList.add("modal-open");
+
+    prestasiImage.src = card.dataset.img;
+    prestasiTitle.textContent = card.dataset.title;
+    prestasiDesc.textContent = card.dataset.desc;
+
+    prestasiModal.classList.add("show");
+  });
+});
+
+prestasiClose.addEventListener("click", () => {
+  prestasiModal.classList.remove("show");
+
+  // 🔓 HIDUPKAN LAGI
+  document.body.classList.remove("modal-open");
+});
+
+prestasiModal.addEventListener("click", (e) => {
+  if (e.target === prestasiModal) {
+    prestasiModal.classList.remove("show");
+    document.body.classList.remove("modal-open");
+  }
+});
