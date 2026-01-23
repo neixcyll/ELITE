@@ -7,6 +7,19 @@
   --shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
 }
 
+/* =======================
+   DARK MODE VARIABLES
+   ======================= */
+body.dark-mode {
+  --white: #0e0e0e;          /* background utama */
+  --light-gray: #161616;    /* section alt */
+  --dark: #f2f2f2;          /* teks utama */
+  --gray: #b5b5b5;          /* teks sekunder */
+  --orange: #ff7a00;
+  --shadow: 0 12px 32px rgba(0, 0, 0, 0.6);
+}
+
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -19,6 +32,19 @@ body {
   background-color: var(--white);
   line-height: 1.6;
 }
+
+body.dark-mode {
+  background-color: var(--white);
+  color: var(--dark);
+}
+
+body.dark-mode::before {
+  background-image:
+    linear-gradient(rgba(255, 122, 0, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 122, 0, 0.06) 1px, transparent 1px);
+  opacity: 0.25;
+}
+
 
 body::before {
   content: "";
@@ -85,6 +111,20 @@ body::before {
   background-color: var(--light-gray);
 }
 
+body.dark-mode .section.alt {
+  background-color: var(--light-gray);
+}
+
+body.dark-mode .card,
+body.dark-mode .structure-card,
+body.dark-mode .timeline-card,
+body.dark-mode .project-card,
+body.dark-mode .detail-content {
+  background: #141414;
+  color: var(--dark);
+}
+
+
 .section-title {
   text-align: center;
   margin-bottom: 48px;
@@ -146,6 +186,21 @@ body::before {
   z-index: 10;
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
+
+body.dark-mode .navbar {
+  background-color: rgba(14, 14, 14, 0.85);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+body.dark-mode .nav-link {
+  color: var(--dark);
+}
+
+body.dark-mode .nav-link:hover,
+body.dark-mode .nav-link.active {
+  color: var(--orange);
+}
+
 
 .nav-content {
   display: flex;
@@ -289,6 +344,17 @@ body::before {
   background: rgba(0, 0, 0, 0.5);
   z-index: 1;
 }
+
+body.dark-mode .video-overlay {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+body.dark-mode .hero-text h1,
+body.dark-mode .lead,
+body.dark-mode .hero-stats p {
+  color: #ffffff;
+}
+
 
 /* Pastikan konten hero di atas video */
 .hero .container {
@@ -636,6 +702,19 @@ body::before {
   display: flex;
   flex-direction: column;
   height: 100%;
+}
+
+body.dark-mode .project-card {
+  background: linear-gradient(135deg, #121212, #1a1a1a);
+  border-color: var(--orange);
+}
+
+body.dark-mode .project-body p {
+  color: var(--gray);
+}
+
+body.dark-mode .battle-stat-value {
+  color: var(--orange);
 }
 
 /* Inner depth pada foto */
@@ -1819,3 +1898,14 @@ body.modal-open {
   overscroll-behavior: none;
   touch-action: none;
 }
+
+body.dark-mode .footer {
+  background: #0b0b0b;
+  color: var(--dark);
+}
+
+body.dark-mode .prestasi-modal-content {
+  background: #141414;
+  color: var(--dark);
+}
+

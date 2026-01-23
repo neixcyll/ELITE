@@ -426,3 +426,35 @@ prestasiModal.addEventListener("click", (e) => {
     document.body.classList.remove("modal-open");
   }
 });
+
+// Auto dark mode berdasarkan sistem (sekali saja)
+if (!localStorage.getItem("theme")) {
+  if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+    document.body.classList.add("dark-mode");
+    localStorage.setItem("theme", "dark");
+    if (themeToggle) themeToggle.textContent = "☀️";
+  }
+}
+
+// ===== DARK / LIGHT MODE TOGGLE =====
+const themeToggle = document.getElementById("themeToggle");
+
+// Cek preferensi tersimpan
+const savedTheme = localStorage.getItem("theme");
+if (savedTheme === "dark") {
+  document.body.classList.add("dark-mode");
+  themeToggle.textContent = "☀️";
+}
+
+// Toggle manual
+themeToggle.addEventListener("click", () => {
+  document.body.classList.toggle("dark-mode");
+
+  const isDark = document.body.classList.contains("dark-mode");
+
+  // Simpan preferensi
+  localStorage.setItem("theme", isDark ? "dark" : "light");
+
+  // Ganti icon
+  themeToggle.textContent = isDark ? "☀️" : "🌙";
+});
