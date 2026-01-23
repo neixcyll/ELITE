@@ -1235,10 +1235,16 @@ body.dark-mode .battle-stat-value {
     display: block;
   }
 
-  .navbar .btn {
+  .navbar .btn.primary {
     display: none;
   }
 
+  .navbar .btn.ghost#themeToggle {
+    display: inline-flex;
+    padding: 8px 12px;
+    min-width: auto;
+  }
+  
   .hero-text h1 {
     font-size: 2.4rem;
   }
@@ -1909,3 +1915,104 @@ body.dark-mode .prestasi-modal-content {
   color: var(--dark);
 }
 
+body.dark-mode .prestasi-modal-content {
+  background: #141414;
+  color: var(--dark);
+}
+
+/* Dark Mode untuk card Struktur Organisasi */
+body.dark-mode .info-card h3,
+body.dark-mode .info-card p {
+  color: #ffffff;
+}
+
+/* Dark Mode untuk detail container */
+body.dark-mode .detail-content > ul > li {
+  background: #1a1a1a;
+  color: var(--dark);
+}
+
+body.dark-mode .detail-content > ul > li:hover {
+  background: #242424;
+}
+
+body.dark-mode .detail-content ol li {
+  background: #1a1a1a;
+  border-color: #2a2a2a;
+  color: var(--dark);
+}
+
+body.dark-mode .detail-content ol li:hover {
+  background: #242424;
+}
+
+/* Dark Mode untuk org-box */
+body.dark-mode .org-box {
+  background: #1a1a1a;
+  color: var(--dark);
+}
+
+body.dark-mode .org-box.main {
+  background: #1a1a1a;
+}
+
+body.dark-mode .org-name {
+  color: var(--dark);
+}
+
+body.dark-mode .org-members > div {
+  background: rgba(255, 122, 0, 0.1);
+  color: var(--dark);
+}
+
+/* Contact Card Interaktif */
+.contact-card {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.contact-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 32px rgba(255, 122, 0, 0.3);
+}
+
+.contact-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.contact-card h3 {
+  color: var(--orange);
+  margin-bottom: 12px;
+  font-size: 1.3rem;
+}
+
+.contact-card p {
+  color: var(--dark);
+  margin-bottom: 12px;
+  line-height: 1.6;
+}
+
+.contact-action {
+  display: inline-block;
+  color: var(--orange);
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-top: 8px;
+  transition: all 0.3s ease;
+}
+
+.contact-card:hover .contact-action {
+  transform: translateX(6px);
+  color: #ff9933;
+}
+
+/* Dark Mode untuk Contact */
+body.dark-mode .contact-card p {
+  color: var(--dark);
+}
+
+body.dark-mode .contact-card:hover {
+  box-shadow: 0 12px 32px rgba(255, 122, 0, 0.4);
+}
