@@ -186,35 +186,35 @@
        <section id="struktur" class="section">
   <div class="container">
 
-    <div class="section-title reveal">
-      <h2>Struktur Organisasi</h2>
-      <p>Susunan pengurus dan divisi Robotic Elite.</p>
-    </div>
+    <section id="struktur" class="section">
+        <div class="container">
+          <div class="section-title reveal">
+            <h2>Struktur Organisasi</h2>
+            <p>Susunan pengurus dan divisi Robotic Elite.</p>
+          </div>
 
-    <div class="card-stage reveal">
+          <div class="card-stage reveal">
+            <div class="info-card card-left" data-card="pengurus">
+              <div class="card-icon">👥</div>
+                <h3>Pengurus Inti</h3>
+                <p>Klik untuk melihat struktur pengurus</p>
+              </div>
 
-      <div class="info-card card-left" data-card="pengurus">
-  <div class="card-icon">👥</div>
-  <h3>Pengurus Inti</h3>
-  <p>Klik untuk melihat struktur pengurus</p>
-</div>
+              <div class="info-card card-right" data-card="divisi">
+                <div class="card-icon">🤖</div>
+                <h3>Divisi Riset</h3>
+                <p>Klik untuk melihat pembagian divisi</p>
+              </div>
 
-<div class="info-card card-right" data-card="divisi">
-  <div class="card-icon">🤖</div>
-  <h3>Divisi Riset</h3>
-  <p>Klik untuk melihat pembagian divisi</p>
-</div>
+            </div>
+            <div class="detail-container" id="detailContainer">
+              <button class="btn-back" id="btnBack">← Kembali</button>
+              <div class="detail-content" id="detailContent">
+              </div>
+            </div>
 
-    </div>
-    <div class="detail-container" id="detailContainer">
-      <button class="btn-back" id="btnBack">← Kembali</button>
-      <div class="detail-content" id="detailContent">
-      </div>
-    </div>
-
-  </div>
-</section>
-
+          </div>
+        </section>
 
     <section id="dokumentasi" class="section alt">
       <div class="container">
@@ -284,96 +284,237 @@
         </div>
       </div>
     </section>
+
     <section id="prestasi" class="section projects">
-      <div class="container">
-        <div class="section-title reveal">
-          <h2>Prestasi</h2>
-          <p>Deretan prestasi terbaru  yang diraih oleh tim Robotic Elite.</p>
-        </div>
-        <div class="project-grid">
-
-          <article class="project-card reveal">
-            <div class="project-thumb">
-              <img src="Galeri/iarc2024.jpeg" alt="IARC Soccer">
-              <span>Juara 1, 2, dan 3</span>
-            </div>
-            <div class="project-body">
-              <h3>IARC X Kategori Robo Soccer 2024</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam amet nemo dolorem culpa, accusantium perferendis at. Corrupti quisquam temporibus porro quia vero perferendis nulla accusamus, adipisci totam reiciendis aliquam sequi!</p>
-              <div class="project-actions">
-              </div>
-            </div>
-          </article>
+    <div class="container">
+      <div class="section-title reveal">
+        <h2>Prestasi</h2>
+        <p>Deretan prestasi terbaru yang diraih oleh tim Robotic Elite.</p>
+      </div>
+      <div class="projects-scroll-wrapper">
+        <div class="projects-scroll-track" id="scrollTrack">
           
-          <article class="project-card reveal">
-            <div class="project-thumb">
-              <img src="Galeri/elektroexpo2025.jpeg" alt="Elektro Expo">
-              <span>Juara 1</span>
-            </div>
-            <div class="project-body">
-              <h3>Kejuaraan Elektro EXPO 2025 Politeknik Negeri Semarang</h3>
-              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cum veniam nobis ullam voluptatem facilis odio quis, excepturi ex culpa odit! Quis, officiis? Officiis ut minus hic rerum recusandae? Quae, dolores.</p>
-              <div class="project-actions">
-              </div>
-            </div>
-          </article>
+           <div class="project-card-wrapper">
+            <article class="project-card reveal prestasi-card"
+              data-img="Galeri/ffr2025.jpeg"
+              data-title="Automation Week VIII 2025"
+              data-desc="Tim ELITE berhasil menyapu podium Juara 1, 2, dan 3 pada kategori Fire Fighting Roboboat di ajang Automation Week VIII tahun 2025.">
 
-          <article class="project-card reveal">
-            <div class="project-thumb">
-              <img src="Galeri/ffr2025.jpeg" alt="FFR 2025">
-              <span>Juara 1, 2, dan 3</span>
-            </div>
-            <div class="project-body">
-              <h3>Automation Week VIII Kategori Fire Fighting Roboboat 2025</h3>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos voluptate reprehenderit, minus quos harum dolorem totam, delectus iste vero, quasi culpa tempora maxime! Unde voluptatem modi temporibus nisi consequatur excepturi.</p>
-              <div class="project-actions">
+              <!-- Card 3: FFR 2025 - Multi Champion -->
+              <div class="battle-corner tl"></div>
+              <div class="battle-corner tr"></div>
+              <div class="battle-corner bl"></div>
+              <div class="battle-corner br"></div>
+              <div class="battle-rank multi">🏆 JUARA 1, 2, 3</div>
+              <div class="project-thumb">
+                <img src="Galeri/ffr2025.jpeg" alt="FFR 2025">
               </div>
-            </div>
-          </article>
-
+              <div class="project-body">
+                <h3>Automation Week VIII Kategori Fire Fighting Roboboat 2025</h3>
+                <div class="battle-stats">
+                  <div class="battle-stat">
+                    <div class="battle-stat-label">Rank</div>
+                    <div class="battle-stat-value">1-2-3</div>
+                  </div>
+                  <div class="battle-stat">
+                    <div class="battle-stat-label">Year</div>
+                    <div class="battle-stat-value">2025</div>
+                  </div>
+                  <div class="battle-stat">
+                    <div class="battle-stat-label">Level</div>
+                    <div class="battle-stat-value">Nasional</div>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
           
 
-          <article class="project-card reveal">
-            <div class="project-thumb">
-              <img src="Galeri/ffr2024.jpeg" alt="ffr2024">
-              <span>Juara 1, 2, 3, dan harapan 1</span>
-            </div>
-            <div class="project-body">
-              <h3>Automation Week VII Kategori Fire Fighting ROboboat 2024</h3>
-              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Necessitatibus dolor explicabo, dolorum laudantium obcaecati, repellat ratione et odit a quisquam molestiae praesentium adipisci, unde totam tempora labore iure esse eum!</p>
-              <div class="project-actions">
-              </div>
-            </div>
-          </article>
+          <!-- Card 2: Elektro Expo 2025 - Champion -->
+          <div class="project-card-wrapper">
+            <article class="project-card reveal prestasi-card"
+              data-img="Galeri/elektroexpo2025.jpeg"
+              data-title="Elektro EXPO 2025"
+              data-desc="Meraih Juara 1 pada Kejuaraan Elektro EXPO 2025 yang diselenggarakan oleh Politeknik Negeri Semarang melalui performa robot yang stabil dan inovatif.">
 
-          <article class="project-card reveal">
-            <div class="project-thumb">
-              <img src="Galeri/ukwms2024.jpeg" alt="ukwms2024 Soccer">
-              <span>Juara 3</span>
-            </div>
-            <div class="project-body">
-              <h3>Electro Of Things 3.0 Soccer Robocup 2 2024</h3>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias magni ipsum amet? Deleniti magnam, at dignissimos nesciunt blanditiis illum quis accusantium voluptas officia nobis minima expedita sint quaerat architecto libero?</p>
-              <div class="project-actions">
+              <div class="battle-corner tl"></div>
+              <div class="battle-corner tr"></div>
+              <div class="battle-corner bl"></div>
+              <div class="battle-corner br"></div>
+              <div class="battle-rank">🥇 JUARA 1</div>
+              <div class="project-thumb">
+                <img src="Galeri/elektroexpo2025.jpeg" alt="Elektro Expo">
               </div>
-            </div>
-          </article>
+              <div class="project-body">
+                <h3>Kejuaraan Elektro EXPO 2025 Politeknik Negeri Semarang</h3>
+                <div class="battle-stats">
+                  <div class="battle-stat">
+                    <div class="battle-stat-label">Rank</div>
+                    <div class="battle-stat-value">1st</div>
+                  </div>
+                  <div class="battle-stat">
+                    <div class="battle-stat-label">Year</div>
+                    <div class="battle-stat-value">2025</div>
+                  </div>
+                  <div class="battle-stat">
+                    <div class="battle-stat-label">Level</div>
+                    <div class="battle-stat-value">Nasional</div>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
 
-          <article class="project-card reveal">
-            <div class="project-thumb">
-              <img src="Galeri/ELITE.png" alt="Electrums XI">
-              <span>Juara 1 dan 3</span>
-            </div>
-            <div class="project-body">
-              <h3>Eltrums XI - Electro Techno Race UMS Competition 2024</h3>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, cumque ut perferendis doloremque eius facere voluptatum quo dolore aperiam nesciunt quidem harum iure optio accusantium voluptatem voluptates reiciendis veniam rem.</p>
-              <div class="project-actions">
+          <!-- Card 1: IARC 2024 - Multi Champion -->
+          <div class="project-card-wrapper">
+            <article class="project-card reveal prestasi-card"
+              data-img="Galeri/iarc2024.jpeg"
+              data-title="IARC X Kategori Robo Soccer 2024"
+              data-desc="Tim ELITE berhasil mendominasi kategori Robo Soccer di ajang IARC X tingkat nasional dengan meraih Juara 1, 2, dan 3 dalam satu kompetisi.">
+              
+              <div class="battle-corner tl"></div>
+              <div class="battle-corner tr"></div>
+              <div class="battle-corner bl"></div>
+              <div class="battle-corner br"></div>
+              <div class="battle-rank multi">🏆 JUARA 1, 2, 3</div>
+              <div class="project-thumb">
+                <img src="Galeri/iarc2024.jpeg" alt="IARC Soccer">
               </div>
-            </div>
-          </article>
+              <div class="project-body">
+                <h3>IARC X Kategori Robo Soccer 2024</h3>
+                <div class="battle-stats">
+                  <div class="battle-stat">
+                    <div class="battle-stat-label">Rank</div>
+                    <div class="battle-stat-value">1-2-3</div>
+                  </div>
+                  <div class="battle-stat">
+                    <div class="battle-stat-label">Year</div>
+                    <div class="battle-stat-value">2024</div>
+                  </div>
+                  <div class="battle-stat">
+                    <div class="battle-stat-label">Level</div>
+                    <div class="battle-stat-value">Nasional</div>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Card 4: FFR 2024 - Rainbow Multi -->
+          <div class="project-card-wrapper">
+            <article class="project-card reveal prestasi-card"
+              data-img="Galeri/ffr2024.jpeg"
+              data-title="Automation Week VII 2024"
+              data-desc="Prestasi membanggakan dengan meraih Juara 1, 2, 3, serta Harapan 1 pada kategori Fire Fighting Roboboat di Automation Week VII tahun 2024.">
+
+              <div class="battle-corner tl"></div>
+              <div class="battle-corner tr"></div>
+              <div class="battle-corner bl"></div>
+              <div class="battle-corner br"></div>
+              <div class="battle-rank rainbow">🏆 JUARA 1, 2, 3 & HARAPAN 1</div>
+              <div class="project-thumb">
+                <img src="Galeri/ffr2024.jpeg" alt="FFR 2024">
+              </div>
+              <div class="project-body">
+                <h3>Automation Week VII Kategori Fire Fighting Roboboat 2024</h3>
+                <div class="battle-stats">
+                  <div class="battle-stat">
+                    <div class="battle-stat-label">Rank</div>
+                    <div class="battle-stat-value">Multiple</div>
+                  </div>
+                  <div class="battle-stat">
+                    <div class="battle-stat-label">Year</div>
+                    <div class="battle-stat-value">2024</div>
+                  </div>
+                  <div class="battle-stat">
+                    <div class="battle-stat-label">Level</div>
+                    <div class="battle-stat-value">Nasional</div>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Card 5: UKWMS 2024 - Bronze -->
+          <div class="project-card-wrapper">
+            <article class="project-card reveal prestasi-card"
+              data-img="Galeri/ukwms2024.jpeg"
+              data-title="Electro Of Things 3.0 2024"
+              data-desc="Meraih Juara 3 pada kompetisi Electro Of Things 3.0 kategori Soccer Robocup 2 tingkat nasional yang diselenggarakan oleh UKWMS.">
+
+              <div class="battle-corner tl"></div>
+              <div class="battle-corner tr"></div>
+              <div class="battle-corner bl"></div>
+              <div class="battle-corner br"></div>
+              <div class="battle-rank bronze">🥉 JUARA 3</div>
+              <div class="project-thumb">
+                <img src="Galeri/ukwms2024.jpeg" alt="UKWMS 2024">
+              </div>
+              <div class="project-body">
+                <h3>Electro Of Things 3.0 Soccer Robocup 2 2024</h3>
+                <div class="battle-stats">
+                  <div class="battle-stat">
+                    <div class="battle-stat-label">Rank</div>
+                    <div class="battle-stat-value">3rd</div>
+                  </div>
+                  <div class="battle-stat">
+                    <div class="battle-stat-label">Year</div>
+                    <div class="battle-stat-value">2024</div>
+                  </div>
+                  <div class="battle-stat">
+                    <div class="battle-stat-label">Level</div>
+                    <div class="battle-stat-value">Nasional</div>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Card 6: Eltrums XI - Multi -->
+          <div class="project-card-wrapper">
+            <article class="project-card reveal prestasi-card"
+              data-img="Galeri/ELITE.png"
+              data-title="Electro Techno Race UMS Competition 2024"
+              data-desc="Tim ELITE sukses meraih Juara 1 dan Juara 3 dalam kompetisi Eltrums XI – Electro Techno Race UMS melalui kerja tim dan strategi robot yang solid.">
+
+              <div class="battle-corner tl"></div>
+              <div class="battle-corner tr"></div>
+              <div class="battle-corner bl"></div>
+              <div class="battle-corner br"></div>
+              <div class="battle-rank multi">🏆 JUARA 1 & 3</div>
+              <div class="project-thumb">
+                <img src="Galeri/ELITE.png" alt="Eltrums XI">
+              </div>
+              <div class="project-body">
+                <h3>Eltrums XI - Electro Techno Race UMS Competition 2024</h3>
+                <div class="battle-stats">
+                  <div class="battle-stat">
+                    <div class="battle-stat-label">Rank</div>
+                    <div class="battle-stat-value">1 & 3</div>
+                  </div>
+                  <div class="battle-stat">
+                    <div class="battle-stat-label">Year</div>
+                    <div class="battle-stat-value">2024</div>
+                  </div>
+                  <div class="battle-stat">
+                    <div class="battle-stat-label">Level</div>
+                    <div class="battle-stat-value">Nasional</div>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+
         </div>
       </div>
-    </section>
+
+      <!-- Control Buttons (mobile only) -->
+      <div class="scroll-controls">
+        <button class="scroll-btn" id="scrollLeft">‹</button>
+        <button class="scroll-btn" id="scrollRight">›</button>
+      </div>
+    </div>
+  </section>
 
     <section id="kontak" class="section alt">
       <div class="container">
@@ -411,10 +552,14 @@
     </div>
   </footer>
 
-  <div class="modal" id="modal">
-    <div class="modal-content">
-      <button class="modal-close" aria-label="Tutup">✕</button>
-      <div class="modal-body" id="modalBody">Konten</div>
+  <!-- ===== MODAL PRESTASI ===== -->
+  <div id="prestasiModal" class="prestasi-modal">
+    <div class="prestasi-modal-content">
+      <button class="prestasi-close" id="prestasiClose">×</button>
+
+      <img id="prestasiImage" src="" alt="Prestasi" />
+      <h3 id="prestasiTitle"></h3>
+      <p id="prestasiDesc"></p>
     </div>
   </div>
 
