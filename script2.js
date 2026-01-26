@@ -136,12 +136,6 @@ const cardData = {
     <div class="org-chart">
       
       <!-- Level 1: Pembina -->
-      <div class="org-level">
-        <div class="org-box top">
-          <div class="org-position">Pembina</div>
-          <div class="org-name">-</div>
-        </div>
-      </div>
       
       <!-- Level 2: Pembimbing -->
       <div class="org-level">
