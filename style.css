@@ -1909,3 +1909,176 @@ body.dark-mode .prestasi-modal-content {
   color: var(--dark);
 }
 
+/* ================================
+   MOBILE FIRST OPTIMIZATION
+================================ */
+@media (max-width: 600px) {
+
+  /* ===== GENERAL ===== */
+  .section {
+    padding: 64px 0;
+  }
+
+  .container {
+    width: 92%;
+  }
+
+  p {
+    font-size: 0.95rem;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+  }
+
+  /* ===== NAVBAR ===== */
+  .nav-content {
+    padding: 12px 0;
+  }
+
+  .brand span {
+    font-size: 0.9rem;
+  }
+
+  .nav-links {
+    width: 100%;
+    right: 0;
+  }
+
+  .nav-links a {
+    padding: 10px 0;
+  }
+
+  /* ===== HERO ===== */
+  .hero {
+    min-height: auto;
+    padding-top: 100px;
+    padding-bottom: 40px;
+  }
+
+  .hero-grid {
+    gap: 32px;
+  }
+
+  .hero-text h1 {
+    font-size: 1.9rem;
+    line-height: 1.25;
+  }
+
+  .lead {
+    font-size: 0.95rem;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+  }
+
+  .hero-stats {
+    gap: 16px;
+  }
+
+  .hero-stats h3 {
+    font-size: 1.2rem;
+  }
+
+  /* ===== SECTION TITLE ===== */
+  .section-title {
+    padding: 20px 16px;
+  }
+
+  /* ===== CARD ===== */
+  .card,
+  .structure-card,
+  .timeline-card {
+    padding: 18px;
+  }
+
+  /* ===== TIMELINE ===== */
+  .timeline-item {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .timeline-year {
+    width: fit-content;
+  }
+
+  /* ===== INFO CARD (STRUKTUR) ===== */
+  .card-stage {
+    height: 320px;
+  }
+
+  .info-card {
+    width: 230px;
+    height: 300px;
+    padding: 24px 18px;
+  }
+
+  .info-card h3 {
+    font-size: 1.3rem;
+  }
+
+  /* ===== PRESTASI CARD ===== */
+  .project-card-wrapper {
+    flex: 0 0 260px;
+    max-width: 260px;
+  }
+
+  .project-thumb {
+    height: 170px;
+  }
+
+  .project-body h3 {
+    font-size: 1rem;
+    min-height: auto;
+  }
+
+  .battle-stat-value {
+    font-size: 1rem;
+  }
+
+  /* ===== AUTO SCROLL SPEED ===== */
+  .projects-scroll-track {
+    animation-duration: 28s;
+  }
+
+  /* ===== DOKUMENTASI (JIKA DIPAKAI) ===== */
+  .slide {
+    padding: 16px;
+  }
+
+  /* ===== CONTACT ===== */
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* ===== FOOTER ===== */
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+}
+
+/* ===== STICKY MOBILE CTA ===== */
+@media (max-width:600px){
+  .mobile-cta {
+    position: fixed;
+    bottom: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--orange);
+    color: white;
+    padding: 12px 26px;
+    border-radius: 999px;
+    font-weight: 600;
+    z-index: 999;
+    box-shadow: 0 6px 20px rgba(255,122,0,.4);
+    text-decoration: none;
+  }
+}
+
